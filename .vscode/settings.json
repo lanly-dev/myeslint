@@ -14,5 +14,6 @@
 		"efix",
 		"myeslint"
 	],
-	"akazas-love.snowInEditor": false
+	"akazas-love.snowInEditor": false,
+	"editor.rulers": [120]
 }
