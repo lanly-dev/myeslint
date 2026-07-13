@@ -9,7 +9,6 @@ export function activate(context: vscode.ExtensionContext) {
   const d1 = rc('myeslint.openConfig', () => MyEslint.openConfig(resourceUri))
   const d2 = rc('myeslint.resetConfig', () => MyEslint.resetConfig(resourceUri))
   const d3 = rc('myeslint.lintFile', () => MyEslint.lintFile(resourceUri))
-
   context.subscriptions.push(d1, d2, d3)
 }
 
