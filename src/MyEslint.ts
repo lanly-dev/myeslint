@@ -30,7 +30,7 @@ export default class MyEslint {
   }
 
   static async lintFile(resourceUri: vscode.Uri): Promise<void> {
-    console.log('Starting linting process')
+    console.debug('Starting linting process')
     const editor = vscode.window.activeTextEditor
     if (!editor) {
       vscode.window.showErrorMessage('No active text editor to lint')
@@ -44,41 +44,25 @@ export default class MyEslint {
     }
 
     const code = document.getText()
-    const filePath = document.fileName
 
-
-    // Get extension path to the bundled resources folder
-    const extensionPath = vscode.extensions.getExtension('myeslint')?.extensionPath
-    if (!extensionPath) {
-      vscode.window.showErrorMessage('MyEslint extension not found')
-      return
-    }
-
-    // The webpack build outputs resources to 'out/resources/' but VS Code extracts .vsix with
-    // files directly in 'resources/'. Use whichever exists.
-    const bundledConfigPath = path.join(extensionPath, 'out', 'resources', 'eslint.config.js')
-    const fallbackConfigPath = path.join(extensionPath, 'resources', 'eslint.config.js')
-
-    const configToUse = fs.existsSync(bundledConfigPath)
-      ? bundledConfigPath
-      : (fs.existsSync(fallbackConfigPath) ? fallbackConfigPath : null)
-
-    if (!configToUse || !fs.existsSync(configToUse)) {
-      vscode.window.showErrorMessage('ESLint configuration file not found in extension')
-      return
-    }
+    const configFileUri = vscode.Uri.joinPath(resourceUri, 'eslint.config.js')
 
     // Load the ESLint configuration from bundled eslint.config.js (CommonJS format)
     const linter = new ESLint({
-      overrideConfigFile: configToUse,
+      overrideConfigFile: configFileUri.path,
       fix: true,
       allowInlineConfig: false
     })
 
+    let results: ESLint.LintResult[] | undefined
     // Lint and auto-fix the file content using flat config
-    const results = await linter.lintText(code, { filePath: filePath || 'file.js' })
-
-    if (results.length === 0) {
+    try {
+      results = await linter.lintText(code, {})
+    } catch (error) {
+      vscode.window.showErrorMessage(`Failed to lint file: ${error}`)
+      return
+    }
+    if (!results || results.length === 0) {
       vscode.window.showInformationMessage('No ESLint issues found in file')
       return
     }
