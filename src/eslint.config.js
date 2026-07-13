@@ -1,7 +1,6 @@
 import typescriptEslint from 'typescript-eslint'
 import stylistic from '@stylistic/eslint-plugin'
 
-
 export default [{
   files: ['**/*.ts']
 }, {
@@ -13,11 +12,7 @@ export default [{
   languageOptions: {
     parser: typescriptEslint.parser,
     ecmaVersion: 2022,
-    sourceType: 'module',
-    globals: {
-      console: 'readonly',
-      process: 'readonly'
-    }
+    sourceType: 'module'
   },
 
   rules: {

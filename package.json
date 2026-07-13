@@ -14,33 +14,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "myeslint.helloWorld",
-        "title": "MyEslint: Hello World"
+        "command": "myeslint.openConfig",
+        "title": "MyEslint: Open Global ESLint Configuration File"
       },
       {
-        "command": "myeslint.lintFile",
-        "title": "MyEslint: Lint Current File",
-        "category": "MyEslint"
+        "command": "myeslint.resetConfig",
+        "title": "MyEslint: Reset Configuration File to Extension Defaults"
       },
       {
-        "command": "myeslint.applyConfig",
-        "title": "MyEslint: Apply Config to Workspace",
-        "category": "MyEslint"
-      },
-      {
-        "command": "myeslint.generateConfig",
-        "title": "MyEslint: Generate JSON Config",
-        "category": "MyEslint"
-      },
-      {
-        "command": "myeslint.lintAll",
-        "title": "MyEslint: Lint All Files",
-        "category": "MyEslint"
-      },
-      {
-        "command": "myeslint.showHelp",
-        "title": "MyEslint: Show Help",
-        "category": "MyEslint"
+        "command": "myeslint.lintDirectory",
+        "title": "MyEslint: Lint Directory"
       }
     ],
     "menus": {
@@ -48,7 +31,7 @@
         {
           "command": "myeslint.lintFile",
           "group": "navigation",
-          "when": "editorTextFocus && editorLangId =~ /^(typescript|typescriptreact|javascript|javascriptreact)$/"
+          "when": "editorTextFocus && editorLangId =~ /^(typescript|javascript)$/"
         }
       ]
     }
