@@ -20,8 +20,15 @@ const extensionConfig = {
     libraryTarget: 'commonjs2'
   },
   externals: {
-    vscode: 'commonjs vscode' // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
-    // modules added here also need to be added in the .vscodeignore file
+    vscode: 'commonjs vscode',
+    // Don't bundle ESLint and its plugin ecosystem — they contain pre-bundled
+    // rolldown/vite artifacts that break webpack's CJS interop at runtime.
+    // They are shipped as-is in node_modules instead.
+    eslint: 'commonjs eslint',
+    'typescript-eslint': 'commonjs typescript-eslint',
+    '@typescript-eslint/parser': 'commonjs @typescript-eslint/parser',
+    '@typescript-eslint/eslint-plugin': 'commonjs @typescript-eslint/eslint-plugin',
+    '@stylistic/eslint-plugin': 'commonjs @stylistic/eslint-plugin'
   },
   resolve: {
     // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader

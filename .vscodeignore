@@ -1,7 +1,6 @@
 .vscode/**
 .vscode-test/**
 out/**
-node_modules/**
 src/**
 .gitignore
 .yarnrc
@@ -12,3 +11,11 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 **/.vscode-test.*
+
+# Exclude dev-only node_modules that are not needed at runtime
+node_modules/.bin/**
+node_modules/ts-loader/**
+node_modules/webpack/**
+node_modules/webpack-cli/**
+node_modules/copy-webpack-plugin/**
+node_modules/@types/**
