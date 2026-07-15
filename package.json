@@ -1,6 +1,6 @@
 {
-  "name": "myeslint",
-  "displayName": "MyEslint",
+  "name": "mylint",
+  "displayName": "mylint",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,22 +14,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "myeslint.openConfig",
-        "title": "MyEslint: Open Global ESLint Configuration File"
+        "command": "mylint.openConfig",
+        "title": "mylint: Open Global ESLint Configuration File"
       },
       {
-        "command": "myeslint.resetConfig",
-        "title": "MyEslint: Reset Configuration File to Extension Defaults"
+        "command": "mylint.resetConfig",
+        "title": "mylint: Reset Configuration File to Extension Defaults"
       },
       {
-        "command": "myeslint.lintFile",
-        "title": "MyEslint: Lint File"
+        "command": "mylint.lintFile",
+        "title": "mylint: Lint File"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "myeslint.lintFile",
+          "command": "mylint.lintFile",
           "group": "navigation",
           "when": "editorTextFocus && editorLangId =~ /^(typescript|javascript)$/"
         }

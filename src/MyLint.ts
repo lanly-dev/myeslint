@@ -4,7 +4,7 @@ import { ESLint, Linter } from 'eslint'
 import typescriptEslint from 'typescript-eslint'
 import stylistic from '@stylistic/eslint-plugin'
 
-export default class MyEslint {
+export default class MyLint {
   static async openConfig(resourceUri: vscode.Uri): Promise<void> {
     const configFileUri = vscode.Uri.joinPath(resourceUri, 'eslint.config.js')
     const doc = await vscode.workspace.openTextDocument(configFileUri)

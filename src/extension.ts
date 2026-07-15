@@ -1,14 +1,14 @@
 import * as vscode from 'vscode'
-import MyEslint from './MyEslint'
+import MyLint from './MyLint'
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   const resourceUri = getResourceUri(context)
   const rc = vscode.commands.registerCommand
-  const d1 = rc('myeslint.openConfig', () => MyEslint.openConfig(resourceUri))
-  const d2 = rc('myeslint.resetConfig', () => MyEslint.resetConfig(resourceUri))
-  const d3 = rc('myeslint.lintFile', () => MyEslint.lintFile(resourceUri))
+  const d1 = rc('mylint.openConfig', () => MyLint.openConfig(resourceUri))
+  const d2 = rc('mylint.resetConfig', () => MyLint.resetConfig(resourceUri))
+  const d3 = rc('mylint.lintFile', () => MyLint .lintFile(resourceUri))
   context.subscriptions.push(d1, d2, d3)
 }
 

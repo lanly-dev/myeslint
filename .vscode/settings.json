@@ -12,7 +12,7 @@
 	"js/ts.tsc.autoDetect": "off",
 	"cSpell.words": [
 		"efix",
-		"myeslint"
+		"mylint"
 	],
 	"akazas-love.snowInEditor": false,
 	"editor.rulers": [120]

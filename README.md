@@ -1,6 +1,6 @@
-# myeslint README
+# mylint README
 
-This is the README for your extension "myeslint". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "mylint". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

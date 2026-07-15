@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "myeslint" extension will be documented in this file.
+All notable changes to the "mylint" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
@@ -44,7 +44,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
   directory, where no `node_modules` exists, producing "module not found" errors at runtime.
 
   Fix: replaced the file path with a programmatic `overrideConfig` array built directly in
-  TypeScript. Plugins are imported at the top of `MyEslint.ts` and passed as objects, so Node
+  TypeScript. Plugins are imported at the top of `mylint.ts` and passed as objects, so Node
   resolves them from the extension's own `node_modules` rather than from the config file location.
 
 ## [0.0.1] - Initial release
