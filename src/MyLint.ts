@@ -1,8 +1,8 @@
-import { commands, Range, Uri, workspace, WorkspaceEdit, window, TextEdit } from 'vscode'
-const { showTextDocument, showErrorMessage, showInformationMessage } = window
+import { commands, Range, Uri, TextEdit, window, workspace, WorkspaceEdit } from 'vscode'
 import { ESLint, Linter } from 'eslint'
 import configs from './Configs'
 
+const { showErrorMessage, showInformationMessage, showTextDocument } = window
 export default class MyLint {
   static async openConfig(resourceUri: Uri): Promise<void> {
     const configFileUri = Uri.joinPath(resourceUri, '..', 'src', 'Configs.ts')
@@ -69,17 +69,20 @@ export default class MyLint {
       edit.set(document.uri, [TextEdit.replace(fullRange, result.output)])
       await workspace.applyEdit(edit)
 
-      if (result.messages.length > 0) showInformationMessage(`Fixed ESLint issues. ${result.messages.length} issue(s) remain`)
-      else showInformationMessage('ESLint auto-fix completed successfully')
+      if (result.messages.length > 0) {
+        showInformationMessage(`Fixed ESLint issues. ${result.messages.length} issue(s) remain`)
+      } else showInformationMessage('ESLint auto-fix completed successfully')
     }
-    else if (result.output === code)
+    else if (result.output === code) {
       showInformationMessage(`${result.messages.length} ESLint issue(s) could not be auto-fixed`)
+    }
 
     // Log remaining issues
     if (result.messages.length > 0) {
-      const errorMsg = result.messages.map((m: any) =>
-        `[${m.severity === 2 ? 'Error' : m.severity === 1 ? 'Warning' : 'Info'}] Line ${m.line}:${m.column + 1}: ${m.message}`
-      ).join('\n')
+      const errorMsg = result.messages.map((m: any) => {
+        const severity = m.severity === 2 ? 'Error' : m.severity === 1 ? 'Warning' : 'Info'
+        return `[${severity}] Line ${m.line}:${m.column + 1}: ${m.message}`
+      }).join('\n')
       console.log(`ESLint remaining issues:\n${errorMsg}`)
     }
   }

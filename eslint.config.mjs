@@ -4,6 +4,9 @@ import stylistic from '@stylistic/eslint-plugin'
 export default [{
   files: ['**/*.ts', '**/*.js']
 }, {
+  ignores: ['node_modules', 'dist']
+},
+{
   plugins: {
     '@typescript-eslint': typescriptEslint.plugin,
     '@stylistic': stylistic
@@ -28,6 +31,7 @@ export default [{
       format: ['camelCase', 'PascalCase']
     }],
     '@stylistic/indent': ['error', 2],
+    '@stylistic/max-len': ['error', { code: 120 }],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'always'],
     'no-throw-literal': 'warn',
@@ -39,7 +43,7 @@ export default [{
     'no-unreachable': 'warn',
     'no-unused-vars': 'warn',
     'valid-typeof': 'warn',
-    curly: ['error', 'multi-or-nest'],
+    curly: ['error', 'multi-line'],
     eqeqeq: 'error',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     semi: ['error', 'never']
