@@ -1,7 +1,7 @@
 {
   "name": "mylint",
-  "displayName": "mylint",
-  "description": "",
+  "displayName": "MyLint",
+  "description": "Mostly for virtual file",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.125.0"
@@ -34,7 +34,7 @@
         "mylint.rules": {
           "type": "object",
           "default": {},
-          "description": "ESLint rule overrides for JS/TS files. Keys are rule names, values follow the standard ESLint rule config format (e.g. \"semi\": [\"error\", \"always\"]).",
+          "description": "ESLint rule overrides for JS/TS files. Ex: (e.g. \"semi\": [\"error\", \"always\"]).",
           "additionalProperties": true
         }
       }
@@ -44,7 +44,7 @@
         {
           "command": "mylint.formatFile",
           "group": "1_modification",
-          "when": "editorTextFocus && editorLangId =~ /^(typescript|javascript|json|jsonc)$/"
+          "when": "editorTextFocus && editorLangId =~ /^(typescript|javascript)$/"
         }
       ]
     }
@@ -69,7 +69,6 @@
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint-plugin-jsonc": "3.3.0",
-    "jiti": "^2.7.0"
+    "eslint-plugin-jsonc": "3.3.0"
   }
 }

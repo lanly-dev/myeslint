@@ -31,7 +31,7 @@ export default [{
       format: ['camelCase', 'PascalCase']
     }],
     '@stylistic/indent': ['error', 2],
-    '@stylistic/max-len': ['error', { code: 120 }],
+    '@stylistic/max-len': ['warn', { code: 120 }],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'always'],
     'no-throw-literal': 'warn',
