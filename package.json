@@ -20,6 +20,10 @@
         "title": "mylint: Open Global ESLint Configuration File"
       },
       {
+        "command": "mylint.openSettings",
+        "title": "mylint: Open Settings"
+      },
+      {
         "command": "mylint.formatFile",
         "title": "mylint: Format File"
       }

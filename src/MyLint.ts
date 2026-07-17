@@ -1,17 +1,19 @@
 import * as vscode from 'vscode'
-import * as fs from 'fs'
 import { ESLint, Linter } from 'eslint'
 import configs from './Configs'
 
 export default class MyLint {
   static async openConfig(resourceUri: vscode.Uri): Promise<void> {
-    const configFileUri = vscode.Uri.joinPath(resourceUri, 'eslint.config.js')
+    const configFileUri = vscode.Uri.joinPath(resourceUri, '..', 'src', 'Configs.ts')
     const doc = await vscode.workspace.openTextDocument(configFileUri)
-    await vscode.window.showTextDocument(doc, { preview: false })
+    await vscode.window.showTextDocument(doc, { preview: true, preserveFocus: true })
+  }
+
+  static async openSettings(): Promise<void> {
+    await vscode.commands.executeCommand('workbench.action.openSettings', 'mylint')
   }
 
   static async formatFile(): Promise<void> {
-
     const editor = vscode.window.activeTextEditor
     if (!editor) {
       vscode.window.showErrorMessage('No active text editor to format')
