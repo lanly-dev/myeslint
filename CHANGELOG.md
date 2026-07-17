@@ -6,7 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-### Fixed
+
+## [0.0.1] - Initial release
+
+### Notes
 
 - **Extension activation crash: rolldown runtime artifact**
   Packages in the modern ESLint ecosystem (e.g. `@typescript-eslint/utils`) ship their dist files
@@ -46,5 +49,3 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
   Fix: replaced the file path with a programmatic `overrideConfig` array built directly in
   TypeScript. Plugins are imported at the top of `mylint.ts` and passed as objects, so Node
   resolves them from the extension's own `node_modules` rather than from the config file location.
-
-## [0.0.1] - Initial release

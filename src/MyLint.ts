@@ -1,6 +1,6 @@
 import * as vscode from 'vscode'
 import * as fs from 'fs'
-import { ESLint } from 'eslint'
+import { ESLint, Linter } from 'eslint'
 import configs from './Configs'
 
 export default class MyLint {
@@ -45,6 +45,13 @@ export default class MyLint {
 
     const code = document.getText()
     const overrideConfig = await configs()
+
+    // If the user has defined any rules in settings, replace the defaults entirely
+    const userRules = vscode.workspace.getConfiguration('mylint').get<Linter.RulesRecord>('rules', {})
+    if (Object.keys(userRules).length > 0) {
+      const rulesConfig = overrideConfig[overrideConfig.length - 1]
+      rulesConfig.rules = userRules
+    }
 
     const linter = new ESLint({
       overrideConfigFile: true,
