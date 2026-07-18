@@ -1,0 +1,1 @@
+- ovsx has vsce in it so no need to install vsce

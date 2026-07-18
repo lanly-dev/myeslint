@@ -17,9 +17,14 @@
   "keywords": [
     "eslint",
     "formatter",
+    "JS",
     "javascript",
-    "typescript"
+    "lint",
+    "TS",
+    "typescript",
+    "mylint"
   ],
+  "icon": "media/mylint.png",
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -63,17 +68,22 @@
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
-    "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
+    "watch": "webpack --watch",
     "vsce-package": "vsce package",
     "efix": "eslint . --fix",
     "sfix": "standard --fix"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint-plugin-jsonc": "3.3.0"
   },
   "devDependencies": {
     "@types/node": "26.x",
     "@types/vscode": "^1.107.0",
     "copy-webpack-plugin": "^14.0.0",
     "eslint": "^10.7.0",
+    "ovsx": "^1.0.2",
     "standard": "^17.1.2",
     "ts-loader": "^9.6.2",
     "typescript": "5.8.3",
@@ -81,8 +91,12 @@
     "webpack": "^5.108.4",
     "webpack-cli": "^7.2.1"
   },
-  "dependencies": {
-    "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint-plugin-jsonc": "3.3.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanly-dev/vscode-mylint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lanly-dev/vscode-mylint/issues"
+  },
+  "license": "MIT"
 }

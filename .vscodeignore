@@ -1,10 +1,12 @@
 .gitignore
-.vscode
+.vscode/
 **/*.map
 **/*.ts
 **/eslint.config.mjs
 **/tsconfig.json
-src
+DEV.md
+media/mylint.svg
+src/
 vsc-extension-quickstart.md
 webpack.config.js
 

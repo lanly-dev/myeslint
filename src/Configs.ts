@@ -24,20 +24,24 @@ async function getConfigs(): Promise<Linter.Config[]> {
         }
       },
       rules: {
-        '@typescript-eslint/naming-convention': ['warn', { selector: 'import', format: ['camelCase', 'PascalCase'] }],
         '@stylistic/indent': ['error', 2],
+        '@stylistic/max-len': ['warn', { code: 120 }],
+        '@typescript-eslint/naming-convention': ['warn', {
+          selector: 'import',
+          format: ['camelCase', 'PascalCase']
+        }],
         'comma-dangle': ['error', 'never'],
-        'eol-last': ['error', 'always'],
-        'no-throw-literal': 'warn',
-        'quote-props': ['error', 'as-needed'],
         'constructor-super': 'warn',
+        'eol-last': ['error', 'always'],
         'no-const-assign': 'warn',
         'no-this-before-super': 'warn',
+        'no-throw-literal': 'warn',
         'no-undef': 'warn',
         'no-unreachable': 'warn',
         'no-unused-vars': 'warn',
+        'quote-props': ['error', 'as-needed'],
         'valid-typeof': 'warn',
-        curly: ['error', 'multi-or-nest'],
+        curly: ['error', 'multi-line'],
         eqeqeq: 'error',
         quotes: ['error', 'single', { allowTemplateLiterals: true }],
         semi: ['error', 'never']
