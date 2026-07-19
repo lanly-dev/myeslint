@@ -8,10 +8,12 @@ A formatter extension that uses ESLint, intended for virtual files and small TS/
 </a>
 
 ## Commands
-
 - `mylint: Format File`: Format the current file using the built-in ESLint config
 - `mylint: Open Global ESLint Configuration File`: Open the global ESLint config
 - `mylint: Open Settings`: Open extension settings
+
+## Known issues
+- Doesn't work in some cases if this error present `Parsing error: ';' expected.`
 
 ## Release Notes
 

@@ -52,6 +52,7 @@ export default class MyLint {
       showErrorMessage(`Failed to lint file: ${error}`)
       return
     }
+
     if (!results || results.length === 0) {
       showInformationMessage('No ESLint issues found in file')
       return
@@ -83,7 +84,7 @@ export default class MyLint {
         const severity = m.severity === 2 ? 'Error' : m.severity === 1 ? 'Warning' : 'Info'
         return `[${severity}] Line ${m.line}:${m.column + 1}: ${m.message}`
       }).join('\n')
-      console.log(`ESLint remaining issues:\n${errorMsg}`)
+      showInformationMessage(`ESLint remaining issues:\n${errorMsg}`)
     }
   }
 }

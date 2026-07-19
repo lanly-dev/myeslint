@@ -33,15 +33,15 @@
     "commands": [
       {
         "command": "mylint.openConfig",
-        "title": "mylint: Open Global ESLint Configuration File"
+        "title": "MyLint: Open Global ESLint Configuration File"
       },
       {
         "command": "mylint.openSettings",
-        "title": "mylint: Open Settings"
+        "title": "MyLint: Open Settings"
       },
       {
         "command": "mylint.formatFile",
-        "title": "mylint: Format File"
+        "title": "MyLint: Format File"
       }
     ],
     "configuration": {
@@ -71,8 +71,7 @@
     "package": "webpack --mode production --devtool hidden-source-map",
     "watch": "webpack --watch",
     "vsce-package": "vsce package",
-    "efix": "eslint . --fix",
-    "sfix": "standard --fix"
+    "efix": "eslint . --fix"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
@@ -83,9 +82,8 @@
     "@types/node": "26.x",
     "@types/vscode": "^1.107.0",
     "ovsx": "^1.0.2",
-    "standard": "^17.1.2",
     "ts-loader": "^9.6.2",
-    "typescript": "5.8.3",
+    "typescript": "^6.0.3",
     "webpack": "^5.108.4",
     "webpack-cli": "^7.2.1"
   },

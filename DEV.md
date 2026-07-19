@@ -1,1 +1,2 @@
 - ovsx has vsce in it so no need to install vsce
+- Can't bundle EsLint modules

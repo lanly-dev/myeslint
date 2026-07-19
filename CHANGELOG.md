@@ -10,15 +10,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Update to Typescript 7
 - Try Esbuild?
 
-## [0.0.1] 2026-07-17
+## [0.0.1] 2026-07-19 🌎⚽🏆
 - Context menu: MyLint formatting
 - Override rule option
-- Requirement down to 1.107.0 for Kiro
-- webpack 5.108.4 compiled successfully in 1201 ms
-- 1778 files, 7.35 MB, 1.129.0
+- Requirement based to 1.107.0 for Kiro
+- webpack 5.108.4 compiled successfully in 1388 ms
+- 1490 files, 4.36 MB, 1.129.0
 
 ```
-WARNING  This extension consists of 1778 files, out of which 1355 are JavaScript files. For performance reasons, you should bundle your extension: https://aka.ms/vscode-bundle-extension. You should also exclude unnecessary files by adding them to your .vscodeignore: https://aka.ms/vscode-vscodeignore.
+WARNING  This extension consists of 1490 files, out of which 1311 are JavaScript files. For performance reasons, you should bundle your extension: https://aka.ms/vscode-bundle-extension. You should also exclude unnecessary files by adding them to your .vscodeignore: https://aka.ms/vscode-vscodeignore.
 
 INFO  Files included in the VSIX:
 mylint-0.0.1.vsix
@@ -26,12 +26,12 @@ mylint-0.0.1.vsix
 ├─ extension.vsixmanifest
 └─ extension/
    ├─ LICENSE.txt [1.06 KB]
-   ├─ changelog.md [2.46 KB]
-   ├─ package.json [2.44 KB]
-   ├─ readme.md [0.71 KB]
-   ├─ dist/ (4 files) [1.71 MB]
+   ├─ changelog.md [3.25 KB]
+   ├─ package.json [2.35 KB]
+   ├─ readme.md [0.83 KB]
+   ├─ dist/ (1 file) [5.32 KB]
    ├─ media/ (1 file) [45.17 KB]
-   └─ node_modules/ (1767 files) [29.71 MB]
+   └─ node_modules/ (1482 files) [18.2 MB]
 ```
 
 ### Notes
