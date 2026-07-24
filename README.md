@@ -12,10 +12,12 @@ A formatter extension that uses ESLint, intended for virtual files and small TS/
 - `mylint: Open Global ESLint Configuration File`: Open the global ESLint config
 - `mylint: Open Settings`: Open extension settings
 
-## Known issues
-- Doesn't work in some cases if this error present `Parsing error: ';' expected.`
-
 ## Release Notes
+
+### 0.0.2
+- Fixed `Parsing error: ';' expected.`
+- Add to problems tab
+- Enable problems tab option
 
 ### 0.0.1
 Initial release.

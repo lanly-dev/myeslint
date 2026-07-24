@@ -1,7 +1,5 @@
 # Change Log
-
-All notable changes to the "mylint" extension will be documented in this file.
-
+All notable changes to the "mylint" extension will be documented in this file. \
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [TODO]
@@ -13,6 +11,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Illegal characters
 - Limit diagnostic list items
 - Allowed global variables config
+
+## [0.0.2] 2026-07
+- Add diagnosticCollection list (aka problems tab)
+- Add enable problems tab option to prevent issue overwhelming
+- Fix `Parsing error: ';' expected.` due to like overlapping js/ts parser
+- Improve rules
 
 ## [0.0.1] 2026-07-19 🌎⚽🏆
 - Context menu: MyLint formatting
